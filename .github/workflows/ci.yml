@@ -34,4 +34,4 @@ jobs:
     - name: verify container is running
       run:
         sleep 2
-        curl -f http://localhost:8888 || (echo "App đi not start!" && exit 1)
+        curl -f http://localhost:8888 || (echo "App did not start!" && exit 1)
