@@ -26,12 +26,12 @@ jobs:
 
     steps:
     - name: Run Docker container
-      run:
+      run: |
         docker stop simple-java-app || true
         docker rm simple-java-app || true
         docker run -d -p 8888:8888 --name simple-java-app simple-java-app
 
     - name: verify container is running
-      run:
+      run: |
         sleep 2
         curl -f http://localhost:8888 || (echo "App did not start!" && exit 1)
