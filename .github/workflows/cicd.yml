@@ -1,4 +1,4 @@
-name: CI - Department service
+name: CI - Department service2
 
 on:
   push:
