@@ -1,17 +1,9 @@
-# Use JDK image
-FROM eclipse-temurin:17-jdk-jammy
+FROM openjdk:17-jdk
 
-# Set working dir
 WORKDIR /app
 
-# Copy the Java file
-COPY App.java .
+COPY target/department-service-0.0.1-SNAPSHOT.jar app.jar
 
-# Compile the Java file
-RUN javac App.java
+EXPOSE 8082
 
-# Expose the port
-EXPOSE 8888
-
-# Run the app
-CMD ["java", "App"]
+CMD ["java", "-jar", "app.jar"]
